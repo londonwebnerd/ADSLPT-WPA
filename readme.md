@@ -6,7 +6,7 @@ Vulnerabilidades nos Routers ADB Italia da MEO.
 Referencias
 ----
 
-* O autor do codigo é [Eduardo Novella](https://twitter.com/enovella_) que encontrou a vulnerabilidade nos routers ADB utilizado na Argentina pela operadora Arnet. O codigo neste repositorio encontra-se modificado de modo a funcionar nos routers da MEO
+* O autor do codigo é [Eduardo Novella](https://twitter.com/enovella_) [Repositório Original](https://bitbucket.org/dudux/adbpirelli)  que encontrou a vulnerabilidade nos routers ADB utilizado na Argentina pela operadora Arnet. O codigo neste repositorio encontra-se modificado de modo a funcionar nos routers da MEO
 
 Aviso
 ----
@@ -17,7 +17,7 @@ Licence
 GPLv3
 http://gplv3.fsf.org/
 
-Mais info info
+Mais info
 ----
 
 + http://ednolo.alumnos.upv.es/?p=1883
