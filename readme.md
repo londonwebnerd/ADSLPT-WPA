@@ -6,22 +6,18 @@ Vulnerabilidades nos Routers ADB Italia da MEO.
 Referencias
 ----
 
-* O Autor deste script é [Eduardo Novella](https://twitter.com/enovella_) que encontrou a vulnerabilidade nos routers ADB utilizado na Argentina pela operadora Arnet
+* O autor do codigo é [Eduardo Novella](https://twitter.com/enovella_) que encontrou a vulnerabilidade nos routers ADB utilizado na Argentina pela operadora Arnet. O codigo neste repositorio encontra-se modificado de modo a funcionar nos routers da MEO
 
-
-Contact
+Aviso
 ----
-
-Coder  : Eduardo Novella    Twitter : 
-Website: (http://ednolo.alumnos.upv.es/)
-
+Não me responsabilizo por qualquer problema que lhe possa causar o uso indevido deste codigo, seja de que forma for. Este codigo serve apenas para testar a segurança das redes WiFi
 
 Licence
 ----
 GPLv3
 http://gplv3.fsf.org/
 
-More info
+Mais info info
 ----
 
 + http://ednolo.alumnos.upv.es/?p=1883
