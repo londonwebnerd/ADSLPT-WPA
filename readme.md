@@ -1,9 +1,7 @@
-Vulnerabilities on WPA generation algorithm for Pirelli routers 
+Vulnerabilidades nos Routers ADB Italia da MEO. 
 ==
 
-+ A bunch of scripts to defeat Pirelli routers over the world. There are scripts from Austria, Germany, Italy, Spain, Argentina....
-Also this repository is offering my proof-of-concept for a vulnerability found on Pirelli routers deployed in Argentina.
-
++ Este algoritmo permite gerar as chaves de encriptação WPA pré-definidas nos Routers da MEO com o SSID "ADSLPT-XXXXXX"
 
 References
 ----
