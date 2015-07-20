@@ -1,12 +1,12 @@
 Vulnerabilidades nos Routers ADB Italia da MEO. 
 ==
 
-+ Este algoritmo permite gerar as chaves de encriptação WPA pré-definidas nos Routers da MEO com o SSID "ADSLPT-ABXXXXX"
++ Este algoritmo permite gerar as chaves de encriptação WPA pré-definidas nos Routers da MEO com o SSID "ADSLPT-ABXXXXX".
 
 Referencias
 ----
 
-* O autor do codigo é [Eduardo Novella](https://twitter.com/enovella_) ([Repositório Original](https://bitbucket.org/dudux/adbpirelli))  que encontrou a vulnerabilidade nos routers ADB utilizado na Argentina pela operadora Arnet. O codigo neste repositorio encontra-se modificado de modo a funcionar nos routers da MEO
+* O autor do codigo é [Eduardo Novella](https://twitter.com/enovella_) ([repositório original](https://bitbucket.org/dudux/adbpirelli))  que encontrou a vulnerabilidade nos routers ADB utilizado na Argentina pela operadora Arnet. O codigo neste repositorio encontra-se modificado de modo a funcionar nos routers da MEO.
 
 Aviso
 ----
@@ -22,7 +22,9 @@ Mais info
 
 + http://ednolo.alumnos.upv.es/?p=1883
 
-Usage pirelli
+Utilização
+
+O codigo foi escrito em Python
 ----
 
 	$ python pirelli.py -v

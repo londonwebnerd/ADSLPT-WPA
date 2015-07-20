@@ -4,29 +4,15 @@
 
 '''
 @license: GPLv3
-@author : Eduardo Novella 
-@contact: ednolo[a]inf.upv.es 
-@twitter: @enovella_ 
+@author : Andrew Gomes
+@twitter: @TheAndrewGomes 
 
 -----------------
 [*] Target      : 
 -----------------
 Vendor           : ADB broadband Pirelli
 Router           : Model P.DG-A4001N
-ISP              : Arnet Telecom Argentina, MEO Portugal
-Possible-targets : http://hwaddress.com/?q=ADB%20Broadband%20Italia
-Firmware         : (ARG) http://foro.seguridadwireless.net/puntos-de-acceso-routers-switchs-y-bridges/obtener-firmware-adb-p-dg-a4001n-%28arnet-telecom-argentina%29/   
-                   (POR) https://bitbucket.org/dudux/routerfirmwares
-
------------------
-[*] References  : 
------------------
-[0] [AUSTRIA]   A1/Telekom Austria PRG EAV4202N Default WPA Key Algorithm Weakness    http://sviehb.wordpress.com/2011/12/04/prg-eav4202n-default-wpa-key-algorithm/
-[1] [ITALY]     Alice AGPF: The algorithm!                                            http://wifiresearchers.wordpress.com/2010/06/02/alice-agpf-lalgoritmo/
-[2] [ARGENTINA] CVE-2015-0558: Reverse-engineering the default WPA key generation     http://ednolo.alumnos.upv.es/?p=1883
-                algorithm for Pirelli routers in Argentina
-[3] [PORTUGAL]                                                                        http://ednolo.alumnos.upv.es/?p=2008
-
+ISP              : MEO Portugal
 
 ----------------------
 [*] Test vectors ARG : 
@@ -68,7 +54,7 @@ PORTUGAL
 -----------------
 [*] Changelog   : 
 -----------------
-2015-05-06   v1.4         Added MEO routers in Portugal. Essid ADSLPT-ABXXXXX
+2015-06-05   v1.4         Added MEO routers in Portugal. Essid ADSLPT-ABXXXXX
 2015-02-01   v1.3         Final version, hopefully
 2015-01-12   v1.2         Confusion between LAN  and WLAN mac address
 2015-01-10   v1.1         --allKeys flag added 
@@ -82,9 +68,9 @@ import hashlib
 import argparse
 
 VERSION     = 1
-SUBVERSION  = 4
-DATEVERSION = '2015-05-06' 
-URL         = 'http://www.ednolo.alumnos.upv.es'
+SUBVERSION  = 5
+DATEVERSION = '2015-07-20' 
+URL         = 'https://github.com/AndrewGomes/ADSLPT-WPA'
 
 def genkey(mac,stdout='True'):
     seed = ('\x64\xC6\xDD\xE3\xE5\x79\xB6\xD9\x86\x96\x8D\x34\x45\xD2\x3B\x15' +
@@ -135,12 +121,12 @@ def main():
     targets = ['00:08:27','00:13:C8','00:17:C2','00:19:3E','00:1C:A2','00:1D:8B','00:22:33','00:8C:54',
     '30:39:F2','74:88:8B','84:26:15','A4:52:6F','A4:5D:A1','D0:D4:12','D4:D1:84','DC:0B:1A','F0:84:2F']
     
-    parser = argparse.ArgumentParser(description='''>>> PoC WPA keygen for WiFi Networks deployed by Arnet in Argentina and
-                                                 MEO in Portugal. So far only WiFi networks with essids like WiFi-Arnet-XXXX
-                                                 or ADSLPT-ABXXXXX and manufactured by Pirelli are likely vulnerable. See 
-                                                 http://ednolo.alumnos.upv.es/ for more details. Twitter: @enovella_  and   
-                                                 email: ednolo[at]inf.upv.es. This software is used just as proof-of-concept,
-                                                 commit fraud depends on you!   ''',
+    parser = argparse.ArgumentParser(description='''>>> PoC WPA keygen para as redes WiFi MEO ADSLPT-ABXXXXX
+                                                        Não me responsabilizo por qualquer problema que 
+                                                        lhe possa causar o uso indevido deste codigo
+                                                        seja de que forma for. 
+                                                        Este codigo serve apenas para testar a segurança 
+                                                        da rede WiFi   ''',
                                                  epilog='''(+) Help: python %s -b 74:88:8B:AD:C0:DE ''' %(sys.argv[0])
                                     )
    
@@ -165,13 +151,7 @@ def main():
             checkTargets(args.bssid) 
             print '[+] MAC     : %s' % args.bssid
 
-            if (args.allkeys):
-                print '\n[+] WPA keys for SSID: WiFi-Arnet-XXXX (Argentina)'
-                for i in xrange(-2,5):
-                    mac = addIncToMac(mac_str,i)
-                    print '%-10s' % ((genkey(mac, False)))
-
-                
+            if (args.allkeys):                
                 print '\n[+] WPA keys for SSID: ADSLPT-ABXXXXX  (Portugal)'
                 for i in xrange(-2,5):
                     mac = addIncToMac(mac_str,i)
@@ -179,11 +159,10 @@ def main():
                     
             else:
                 wpa = genkey((addIncToMac(mac_str,0)), False)
-                print '[+] WPA key : %-10s\t%-10s' % (wpa,     "SSID: WiFi-Arnet-XXXX (Argentina)") 
                 print '[+] WPA key : %-10s\t%-10s' % (wpa[:8], "SSID: ADSLPT-ABXXXXX  (Portugal)" ) 
 
         except:
-            sys.exit('[!] Are you trying to crash me? :)')
+            sys.exit('[!] Ocorreu um erro')
     else:
 	parser.print_help()
 
