@@ -1,18 +1,18 @@
 Vulnerabilidades nos Routers ADB Italia da MEO. 
 ==
 
-+ Este algoritmo permite gerar as chaves de encriptação WPA pré-definidas nos Routers da MEO com o SSID "ADSLPT-XXXXXX"
++ Este algoritmo permite gerar as chaves de encriptação WPA pré-definidas nos Routers da MEO com o SSID "ADSLPT-ABXXXXX"
 
-References
+Referencias
 ----
 
-* Every script has its references in it. Please look at them for more info.
+* O Autor deste script é [Eduardo Novella](https://twitter.com/enovella_) que encontrou a vulnerabilidade nos routers ADB utilizado na Argentina pela operadora Arnet
 
 
 Contact
 ----
 
-Coder  : Eduardo Novella    Twitter : [@enovella_](https://twitter.com/enovella_)
+Coder  : Eduardo Novella    Twitter : 
 Website: (http://ednolo.alumnos.upv.es/)
 
 
@@ -98,97 +98,4 @@ Usage pirelli
 	hj0wl2c2  
 	9yw6um3t  
 	ituqajo8  
-	wfti5odq  
-
-
-
-
-Usage fastweb
-----
-
-	$ python fastweb.py FASTWEB-1-00193EA1B2C3
-	 --------------------------------------------------------------------
-	|                       FastWeb Routers Wi-Fi                        |
-	|--------------------------------------------------------------------|
-	|                 Default WPA Key Algorithm Weakness                 |
-	|               Eduardo Novella <@enovella_>                         |
-	 --------------------------------------------------------------------
-	fastweb.py 0.1.1    2013/07/10     [http://www.ednolo.alumnos.upv.es]
-
-
-	[+] SSID   : FASTWEB-1-00193EA1B2C3
-	[+] MAC    : 00193EA1B2C3 
-	[+] MD5    : a37d4267f1d177f44d352978d95558a9
-	[+] Extract: a37d4267 
-	[+] Binary : 10100011011111010100001001100111
-	[+] WPA key: 6b64756b04
-
-
-Usage Alice AGPF
-----
-
-	$ python aliceAGPF.py 
-	 --------------------------------------------------------------------
-	|                PIRELLI Alice Gate VoIP 2 Plus Wi-Fi   (ITALY)      |
-	|--------------------------------------------------------------------|
-	|                 Default WPA Key Algorithm Weakness                 |
-	|               Eduardo Novella <@enovella_>                         |
-	 --------------------------------------------------------------------
-	aliceAGPF.py 0.1.1    2013/07/10    [http://www.ednolo.alumnos.upv.es]
-
-
-		 usage: python aliceAGPF.py [MAC]  [ESSID]
-
-		 eg. python aliceAGPF.py  00:23:8E:01:02:03  Alice-96345678
-
-	$ python aliceAGPF.py 00:23:8E:01:02:03  Alice-96345678
-	 --------------------------------------------------------------------
-	|                PIRELLI Alice Gate VoIP 2 Plus Wi-Fi   (ITALY)      |
-	|--------------------------------------------------------------------|
-	|                 Default WPA Key Algorithm Weakness                 |
-	|               Eduardo Novella <@enovella_>                         |
-	 --------------------------------------------------------------------
-	aliceAGPF.py 0.1.1    2013/07/10    [http://www.ednolo.alumnos.upv.es]
-
-
-	[+] SSID   : Alice-96345678
-	[+] MAC    : 00238E010203 
-	[+] SHA256 : 321948e63878d7dff841ee37ddd29ab3dd957589ef993df3286907f790bfc52a
-	[+] WPA key: ep0ekcz7wtmj5uaz559tn9pr
-
-
-Usage Alice Siemens
-----
-
-	$ python aliceSiemens.py 
-	 --------------------------------------------------------------------
-	|       Alicebox 1121 - Siemens  S1621-Z220-A           (GERMANY)    |
-	|--------------------------------------------------------------------|
-	|                 Default WPA Key Algorithm Weakness                 |
-	|               Eduardo Novella <@enovella_>                         |
-	 --------------------------------------------------------------------
-	aliceSiemens.py 0.1.0    2013/07/10    [http://www.ednolo.alumnos.upv.es]
-
-
-		 usage: python aliceSiemens.py [MAC] 
-
-		 eg. python aliceSiemens.py  00:25:5E:01:02:03
-
-
-	$ python aliceSiemens.py  00:25:5E:01:02:03
-	 --------------------------------------------------------------------
-	|       Alicebox 1121 - Siemens  S1621-Z220-A           (GERMANY)    |
-	|--------------------------------------------------------------------|
-	|                 Default WPA Key Algorithm Weakness                 |
-	|               Eduardo Novella <@enovella_>                         |
-	 --------------------------------------------------------------------
-	aliceSiemens.py 0.1.0    2013/07/10    [http://www.ednolo.alumnos.upv.es]
-
-
-	[+] SSID     : Alicebox????
-	[+] MAC WLAN : 00255E010203 
-	[+] MAC ETH  : 00255E010202
-	[+] MD5 snip : 9fe800c9b138
-	[+] WPA key  : OWZlODAwYzliMTM4
-
-
+	wfti5odq 
